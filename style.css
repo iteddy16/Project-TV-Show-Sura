@@ -69,3 +69,32 @@ footer {
   text-align: center;
   font-size: 0.9rem;
 }
+
+.search-container {
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#searchInput {
+  width: 300px;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+#episodeCount {
+  color: #666;
+  font-size: 14px;
+  white-space: nowrap;
+}

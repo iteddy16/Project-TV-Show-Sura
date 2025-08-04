@@ -1,6 +1,4 @@
 // Run the setup function when the DOM content is fully loaded (best practice over window.onload)
-let allEpisodes = [];
-
 document.addEventListener("DOMContentLoaded", setup);
 
 /**
@@ -9,32 +7,7 @@ document.addEventListener("DOMContentLoaded", setup);
 function setup() {
   const allEpisodes = getAllEpisodes(); // Provided from episodes.js
   makePageForEpisodes(allEpisodes);     // Render all episodes on page
-  setupSearch();
 }
-
-function setupSearch() {
-  const searchInput = document.getElementById("searchInput");
-  const episodeCount = document.getElementById("episode-count");
-  
-  // Set initial episode count
-  episodeCount.textContent = `Displaying ${allEpisodes.length}/${allEpisodes.length} episodes`;
-  
-  searchInput.addEventListener("input", (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    const filteredEpisodes = allEpisodes.filter(episode => {
-      const titleMatch = episode.name.toLowerCase().includes(searchTerm);
-      const summaryMatch = episode.summary.toLowerCase().includes(searchTerm);
-      return titleMatch || summaryMatch;
-    });
-    
-    // Update the episode count display
-    episodeCount.textContent = `Displaying ${filteredEpisodes.length}/${allEpisodes.length} episodes`;
-    
-    // Update the display with filtered episodes
-    makePageForEpisodes(filteredEpisodes);
-  });
-}
-
 
 /**
  * Renders a list of TV show episodes on the web page.

@@ -7,25 +7,27 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="search-container">
-  <div class="search-wrapper">
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="Search episodes..."
-    >
-    <span id="episodeCount"></span>
+  
+  <div class="search-container">  
+    <div class="search-wrapper"> // make the selector, search, and count appear in one line
+      <select id="episodeSelect">
+        <option value="">Select an episode</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Search episodes...">
+      <span id="episodeCount"></span>
+    </div>
   </div>
-</div>
+  
   <div id="root">
     <!-- Content injected by JavaScript -->
   </div>
-
+  
   <footer>
     <p>Data sourced from <a href="https://www.tvmaze.com/api" target="_blank" rel="noopener">TVMaze.com</a></p>
   </footer>
-
+  
   <script src="episodes.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
